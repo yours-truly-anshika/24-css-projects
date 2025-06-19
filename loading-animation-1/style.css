@@ -1,3 +1,9 @@
+:root{
+  --circle-radius: 50px;
+  --cont-width: 200px;
+  --cont-height: 100px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -13,16 +19,16 @@ body {
 }
 
 .container {
-  width: 200px;
-  height: 100px;
+  width: var(--cont-width);
+  height: var(--cont-height);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
 
 .circle {
-  width: 50px;
-  height: 50px;
+  width: calc(var(--circle-radius) * 2);
+  height: calc(var(--circle-radius) * 2);
   background-color: rgb(175, 170, 170);
   border-radius: 50%;
   animation: loading 1s infinite;
@@ -30,16 +36,89 @@ body {
 
 @keyframes loading {
   0% {
-    width: 50px;
-    height: 50px;
+    width: var(--circle-radius);
+    height: var(--circle-radius);
   }
   50% {
-    width: 45px;
-    height: 45px;
+    width: calc(var(--circle-radius) - 5px);
+    height: calc(var(--circle-radius) - 5px);
     background-color: grey;
   }
   100% {
-    width: 50px;
-    height: 50px;
+    width: var(--circle-radius);
+    height: var(--circle-radius);
+  }
+}
+
+@media (max-width:480px) {
+  :root {
+    --circle-radius: 30px;
+    --cont-width: 150px;
+    --cont-height: 90px;
+  }
+
+  .container {
+    width: var(--cont-width);
+    height: var(--cont-height);
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .circle {
+    width: calc(var(--circle-radius) * 2);
+    height: calc(var(--circle-radius) * 2);
+  }
+  
+  @keyframes loading {
+    0% {
+      width: var(--circle-radius);
+      height: var(--circle-radius);
+    }
+    50% {
+      width: calc(var(--circle-radius) - 2px);
+      height: calc(var(--circle-radius) - 2px);
+      background-color: grey;
+    }
+    100% {
+      width: var(--circle-radius);
+      height: var(--circle-radius);
+    }
+  }
+  
+}
+
+@media (max-width:768px) {
+  :root {
+    --circle-radius: 40px;
+    --cont-width: 180px;
+    --cont-height: 90px;
+  }
+
+  .container {
+    width: var(--cont-width);
+    height: var(--cont-height);
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .circle {
+    width: calc(var(--circle-radius) * 2);
+    height: calc(var(--circle-radius) * 2);
+  }
+  
+  @keyframes loading {
+    0% {
+      width: var(--circle-radius);
+      height: var(--circle-radius);
+    }
+    50% {
+      width: calc(var(--circle-radius) - 2px);
+      height: calc(var(--circle-radius) - 2px);
+      background-color: grey;
+    }
+    100% {
+      width: var(--circle-radius);
+      height: var(--circle-radius);
+    }
   }
 }
