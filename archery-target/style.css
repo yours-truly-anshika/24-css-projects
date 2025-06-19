@@ -1,3 +1,8 @@
+:root{
+  --container-width: 200px;
+  --container-height: 200px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +10,7 @@
 }
 
 body {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -19,26 +24,45 @@ body {
   border-radius: 50%;
 }
 
+.container {
+  width: var(--container-width);
+  height: var(--container-height);
+}
+
 .black {
-  width: 170px;
-  height: 170px;
+  width: var(--container-width);
+  height: var(--container-height);
   background-color: black;
 }
 
 .blue {
-  width: 130px;
-  height: 130px;
+  width: calc(var(--container-width) - 20%);
+  height: calc(var(--container-height) - 20%);
   background-color: blue;
 }
 
 .red {
-  width: 90px;
-  height: 90px;
+  width: calc(var(--container-width) - 50%);
+  height: calc(var(--container-height) - 50%);
   background-color: red;
 }
 
 .yellow {
-  width: 50px;
-  height: 50px;
+  width: calc(var(--container-width) - 100%);
+  height: calc(var(--container-height) - 100%);
   background-color: yellow;
+}
+
+@media (max-width:480px) {
+  :root {
+    --container-width: 100px;
+    --container-height: 100px;
+  }
+}
+
+@media (max-width:768px) {
+  :root {
+    --container-width: 150px;
+    --container-height: 150px;
+  }
 }
