@@ -1,0 +1,70 @@
+:root {
+  --card-width: 300px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: var(--card-width);
+  height: calc(var(--card-width) * 3/2);
+  border-radius: calc(var(--card-width) * 0.05);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  display: grid;
+  grid-template-columns: 2fr 6fr 2fr;
+}
+
+.card>* {
+  margin: calc(var(--card-width) * 0.05);
+}
+
+p {
+  font-size: 2rem;
+  color: rgb(219, 0, 0);
+}
+
+.heart-img {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2EyHwEfL4A8SanF6rSdx5YO0dwgGOwEFnLotuuWXw5hWPerBcS7PFY_DM2VpqOyuSPIw&usqp=CAU");
+  background-size: cover;
+  background-position: center;
+}
+
+.left>.heart-img, .right>.heart-img {
+  width: calc(var(--card-width) * 0.1);
+  height: calc(var(--card-width) * 0.1);
+}
+
+.right {
+  transform: rotate(180deg);
+}
+
+.heart-row > .heart-img {
+  width: calc(var(--card-width) * 0.2);
+  height: calc(var(--card-width) * 0.2);
+}
+
+.middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.heart-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.heart-row:nth-child(2) {
+  transform: rotate(180deg);
+}
