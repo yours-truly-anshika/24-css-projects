@@ -1,0 +1,53 @@
+:root {
+  --bar-height: 60px;
+  --bar-width: calc(var(--bar-height) * 6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  height: var(--bar-height);
+  width: var(--bar-width);
+  background-color: #c9c9c9;
+  border-radius: var(--bar-height);
+}
+
+.bar {
+  height: var(--bar-height);
+  border-radius: var(--bar-height) 0 0 var(--bar-height);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  transition: 3s ease-in-out;
+}
+
+.stage-1 {
+  width: calc(var(--bar-width) * 0.25);
+  background-color: rgb(255, 60, 0);
+}
+
+.stage-2 {
+  width: calc(var(--bar-width) * 0.50);
+  background-color: rgb(255, 153, 0);
+}
+
+.stage-3 {
+  width: calc(var(--bar-width) * 0.75);
+  background-color: rgb(255, 251, 0);
+}
+
+.stage-4 {
+  width: var(--bar-width);
+  background-color: rgb(0, 255, 0);
+  border-radius: var(--bar-height);
+}
