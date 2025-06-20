@@ -1,0 +1,66 @@
+:root {
+  --card-width: 300px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: var(--card-width);
+  height: calc(var(--card-width) * 3/2);
+  border-radius: calc(var(--card-width) * 0.05);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.top, .center, .bottom {
+  width: 100%;
+}
+
+.top, .bottom {
+  height: 20%;
+  font-size: 2.5rem;
+  padding: 0.5rem;
+}
+
+p {
+  width: fit-content;
+  padding-left: 0.5rem;
+}
+
+.corner-img {
+  height: 3rem;
+  width: 3rem;
+  background-image: url("https://t3.ftcdn.net/jpg/01/18/50/58/360_F_118505846_PZCicmZZdCNIHS7HUrkUqiUpJMaoJZFZ.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.center {
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom {
+  transform: rotate(180deg);
+}
+
+.center-img {
+  width: 80%;
+  height: 80%;
+  background-image: url("https://t3.ftcdn.net/jpg/01/18/50/58/360_F_118505846_PZCicmZZdCNIHS7HUrkUqiUpJMaoJZFZ.jpg");
+  background-size: cover;
+  background-position: center;
+}
